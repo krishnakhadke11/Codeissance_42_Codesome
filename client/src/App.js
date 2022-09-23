@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import Axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LandingPage from "./Components/LandingPage";
+import LandingPage from "./components/LandingPage";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import NavMain from "./components/NavMain";
 
 function App() {
   const [registerUsername,setRegisterUsername]=useState("");
@@ -48,10 +51,10 @@ const getUser = () =>{
 
   return (
     <div>
-      <LandingPage/>
+      
 
-
-
+    <NavMain/>
+    <Register/>
 
 
      {/*<h1>Login</h1>
