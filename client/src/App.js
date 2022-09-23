@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import Axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LandingPage from "./Components/LandingPage";
 
 function App() {
   const [registerUsername,setRegisterUsername]=useState("");
@@ -46,7 +48,13 @@ const getUser = () =>{
 
   return (
     <div>
-     <h1>Login</h1>
+      <LandingPage/>
+
+
+
+
+
+     {/*<h1>Login</h1>
      <input 
      placeholder="Username..." 
      onChange={(e)=>setLoginUsername(e.target.value)}
@@ -71,7 +79,7 @@ const getUser = () =>{
      
      <h1>Get User</h1>
         <button onClick={getUser}>Submit</button>
-        {data ? <h1>Welcome Back {data.username}</h1> : null}
+        {data ? <h1>Welcome Back {data.username}</h1> : null}*/}
     </div>
   );
 }
