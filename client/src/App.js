@@ -4,11 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from "./components/LandingPage";
 import NavMain from "./components/NavMain";
 import Footer from './components/Footer'
+import Login from "./components/Login";
+import Register from "./components/Register";
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
+
+
 
 function App() {
   const [registerUsername, setRegisterUsername] = useState("");
