@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 function NavMain() {
   return (
     <div>
-      <Navbar bg="dark" expand="lg" sticky="top" variant="dark" justify="right">
+      <Navbar bg="dark" expand="lg" fixed="top" variant="dark" justify="right">
         <Container>
           <Navbar.Brand href="#home">Urgence</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -25,6 +25,7 @@ function NavMain() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <hr/>
     </div>
   );
 }

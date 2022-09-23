@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import Forum from './Forum';
+import ReportIncident from './ReportIncident';
 
-class DashBoard extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+function DashBoard() {
+  return (
+    <div>
+      <Forum/>
+      {/* <ReportIncident/> */}
+    </div>
+  )
 }
 
-export default DashBoard;
+export default DashBoard
+

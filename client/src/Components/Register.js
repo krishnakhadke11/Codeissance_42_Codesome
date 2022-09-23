@@ -1,6 +1,7 @@
 import React ,{useState} from "react";
 import Button from "react-bootstrap/Button";
 import Axios from "axios";
+import Card from "react-bootstrap/Card"
 
 function Register() {
   const [registerUsername, setRegisterUsername] = useState("");
@@ -20,6 +21,9 @@ function Register() {
   };
   return (
     <div className="container d-flex justify-content-center align-items-center">
+      <Card>
+        <Card.Header as="h5">Signup</Card.Header>
+        <Card.Body>
       <form>
         <div className="container">
           <div className="row">
@@ -51,6 +55,7 @@ function Register() {
               className="form-control"
               placeholder="email@example.com"
               id="inputRegEmail"
+              onChange={(e)=>setRegisterUsername(e.target.value)}
             ></input>
           </div>
           <div className="mb-3">
@@ -61,11 +66,14 @@ function Register() {
               type="password"
               className="form-control"
               id="inputRegPassword"
+              onChange={(e)=>setRegisterPassword(e.target.value)}
             ></input>
           </div>
-          <Button variant="outline-dark">Register</Button>
+          <Button variant="outline-dark" onClick={register}>Register</Button>
         </div>
       </form>
+      </Card.Body>
+      </Card>
     </div>
   );
 }

@@ -1,7 +1,8 @@
-import React,{useState} from "react";
+import React,{ useState } from "react";
 import loginCss from "../styles/login.css";
 import Button from "react-bootstrap/Button";
 import Axios from "axios";
+import Card from 'react-bootstrap/Card'
 
 function Login() {
   const [loginUsername, setLoginUsername] = useState("");
@@ -18,6 +19,7 @@ function Login() {
       withCredentials: true,
       url: "http://localhost:4000/login"
     }).then((res) => {
+      setData(res.data)
       console.log(res)
     })
   }
@@ -32,27 +34,34 @@ function Login() {
     })
   }
   return (
-    <div className="container d-flex justify-content-center align-items-center">
+    <div className="container d-flex justify-content-center py-5">
+      <Card className>
+        <Card.Header as="h5">Log In</Card.Header>
+        <Card.Body>
       <form>
           <div className="mb-3">
             <label htmlFor="inputEmail" className="form-label">
-              Email address
+              Email
             </label>
             <input
               type="text"
               className="form-control"
               placeholder="email@example.com"
               id="inputEmail"
+              onChange={(e)=>setLoginUsername(e.target.value)}
             ></input>
           </div>
           <div className="mb-3">
-            <label htmlFor="inputPassword" className="form-label">
+            <label htmlFor="inputDescription" className="form-label">
               Password
             </label>
-            <input type="password" className="form-control"></input>
+            <input type="password" className="form-control" 
+            onChange={(e)=>setLoginPassword(e.target.value)}></input>
           </div>
           <Button variant="outline-dark" onClick={login}>Log In</Button>
       </form>
+      </Card.Body>
+      </Card>
     </div>
   );
 }

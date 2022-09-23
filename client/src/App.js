@@ -64,14 +64,13 @@ function App() {
       <Router>
       <NavMain/>
       <br/>
-      <DashBoard/>
       <Routes>
       <Route path="/" element={<LandingPage />}/>\
-      <Route path="/Home" element={<DashBoard />}/>
+      <Route path="/home" user={data} element={<DashBoard />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/register" element={<Register />}/>
       </Routes>
-      <Footer />
+      {/* <Footer/> */}
     </Router>
       {/* <h1>Login</h1>
      <input 
