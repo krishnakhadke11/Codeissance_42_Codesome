@@ -1,14 +1,30 @@
-import React from "react";
+import React ,{useState} from "react";
 import Button from "react-bootstrap/Button";
+import Axios from "axios";
 
 function Register() {
+  const [registerUsername, setRegisterUsername] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const register = () => {
+    Axios({
+      method: "POST",
+      data: {
+        username: registerUsername,
+        password: registerPassword
+      },
+      withCredentials: true,
+      url: "http://localhost:4000/register"
+    }).then((res) => {
+      console.log(res)
+    })
+  };
   return (
     <div className="container d-flex justify-content-center align-items-center">
       <form>
         <div className="container">
           <div className="row">
             <div className="col">
-              <label for="inputFirstName">First Name</label>
+              <label htmlFor="inputFirstName">First Name</label>
               <input
                 type="text"
                 className="form-control mb-3"
@@ -17,17 +33,17 @@ function Register() {
               />
             </div>
             <div className="col">
-              <label for="inputLastName">Last Name</label>
+              <label htmlFor="inputLastName">Last Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Doe"
                 aria-label="Last name"
               />
             </div>
           </div>
           <div className="mb-3">
-            <label for="inputRegEmail" className="form-label">
+            <label htmlFor="inputRegEmail" className="form-label">
               Email address
             </label>
             <input
@@ -38,7 +54,7 @@ function Register() {
             ></input>
           </div>
           <div className="mb-3">
-            <label for="inputRegPassword" class="form-label">
+            <label htmlFor="inputRegPassword" className="form-label">
               Password
             </label>
             <input

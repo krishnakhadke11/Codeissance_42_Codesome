@@ -6,6 +6,8 @@ import NavMain from "./components/NavMain";
 import Footer from './components/Footer'
 import Login from "./components/Login";
 import Register from "./components/Register";
+import DashBoard from "./components/DashBoard";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -60,18 +62,17 @@ function App() {
   return (
     <div>
       <Router>
-        <NavMain />
-        <Routes>
-          <Route exact path="/" render={() => {
-            return (
-              <>
-                <LandingPage/>
-              </>)
-          }}>
-          </Route>
-        </Routes>
-        <Footer/>
-      </Router>
+      <NavMain/>
+      <br/>
+      <DashBoard/>
+      <Routes>
+      <Route path="/" element={<LandingPage />}/>\
+      <Route path="/Home" element={<DashBoard />}/>
+      <Route path="/login" element={<Login />}/>
+      <Route path="/register" element={<Register />}/>
+      </Routes>
+      <Footer />
+    </Router>
       {/* <h1>Login</h1>
      <input 
      placeholder="Username..." 
