@@ -4,7 +4,7 @@ import NavMain from './NavMain'
 function LandingPage() {
   return (
     <div>
-        <NavMain />
+        <h2>LandingPage</h2>
     </div>
   )
 }

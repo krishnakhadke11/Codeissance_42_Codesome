@@ -9,6 +9,7 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const app = express();
 const User = require("./models/user.js")
+const {isAuthenticated} = require("./config/passportConfig")
 // const { urlencoded } = require("body-parser");
 
 
@@ -77,6 +78,17 @@ if(!doc){
 
 app.get('/getUser',(req,res)=>{
     res.send(req.user);
+})
+
+app.get('/check',(req,res)=>{
+    if(req.user){
+        res.send("Auth working");
+    }
+    else{
+        res.send("NotAuthenticate")
+    }
+
+    
 })
 //Start Server
 const PORT = process.env.PORT || 4000;
