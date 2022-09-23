@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 function NavMain() {
   return (
     <div>
-      <Navbar bg="dark" expand="lg" fixed="top" variant="dark" justify="right">
+      <Navbar bg="light" expand="lg" fixed="top" variant="light" justify="right">
         <Container>
           <Navbar.Brand href="#home">Urgence</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -20,12 +20,17 @@ function NavMain() {
               <Nav.Link href="#about">About</Nav.Link>
             </Nav>
             <Form>
-            <Button variant="outline-danger">Alert</Button>
+              <Button
+                variant="outline-danger"
+                onClick={() => alert("Alerted emergency services.")}
+              >
+                Alert
+              </Button>
             </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <hr/>
+      <hr />
     </div>
   );
 }

@@ -20,7 +20,7 @@ function Register() {
     })
   };
   return (
-    <div className="container d-flex justify-content-center align-items-center">
+    <div className="container d-flex justify-content-center align-items-center py-5">
       <Card>
         <Card.Header as="h5">Signup</Card.Header>
         <Card.Body>

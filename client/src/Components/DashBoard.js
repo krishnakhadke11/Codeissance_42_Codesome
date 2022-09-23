@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
-import Forum from './Forum';
-import ReportIncident from './ReportIncident';
+import React, { Component } from "react";
+import Forum from "./Forum";
+import ReportIncident from "./ReportIncident";
 
 function DashBoard() {
   return (
     <div>
-      <Forum/>
-      {/* <ReportIncident/> */}
+      <Forum />
+      <ReportIncident />
     </div>
-  )
+  );
 }
 
-export default DashBoard
-
+export default DashBoard;

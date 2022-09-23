@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "./components/LandingPage";
 import NavMain from "./components/NavMain";
-import Footer from './components/Footer'
+import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import DashBoard from "./components/DashBoard";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
-
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [registerUsername, setRegisterUsername] = useState("");
@@ -27,51 +21,51 @@ function App() {
       method: "POST",
       data: {
         username: registerUsername,
-        password: registerPassword
+        password: registerPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4000/register"
+      url: "http://localhost:4000/register",
     }).then((res) => {
-      console.log(res)
-    })
+      console.log(res);
+    });
   };
   const login = () => {
     Axios({
       method: "POST",
       data: {
         username: loginUsername,
-        password: loginPassword
+        password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4000/login"
+      url: "http://localhost:4000/login",
     }).then((res) => {
-      console.log(res)
-    })
-  }
+      console.log(res);
+    });
+  };
   const getUser = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/getUser"
+      url: "http://localhost:4000/getUser",
     }).then((res) => {
-      setData(res.data)
-      console.log(res.data)
-    })
-  }
+      setData(res.data);
+      console.log(res.data);
+    });
+  };
 
   return (
     <div>
       <Router>
-      <NavMain/>
-      <br/>
-      <Routes>
-      <Route path="/" element={<LandingPage />}/>\
-      <Route path="/home" user={data} element={<DashBoard />}/>
-      <Route path="/login" element={<Login />}/>
-      <Route path="/register" element={<Register />}/>
-      </Routes>
-      {/* <Footer/> */}
-    </Router>
+        <NavMain />
+        <br />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />\
+          <Route path="/home" user={data} element={<DashBoard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        {/* <Footer/> */}
+      </Router>
       {/* <h1>Login</h1>
      <input 
      placeholder="Username..." 
@@ -99,7 +93,6 @@ function App() {
         <button onClick={getUser}>Submit</button>
         {data ? <h1>Welcome Back {data.username}</h1> : null} */}
     </div>
-
   );
 }
 
